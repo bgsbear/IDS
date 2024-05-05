@@ -1,2 +1,2 @@
 # IDS
-//Laura Liliana Esquibel Prudencio 23310269
+Laura Liliana Esquibel Prudencio 23310269
