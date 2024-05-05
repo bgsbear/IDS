@@ -1,0 +1,72 @@
+//Laura Liliana Esquibel Prudencio
+#include <gotoxy.h>
+#include <conio.h>
+#define W 87
+#define w 119
+#define S 83
+#define s 115
+#define A 65
+#define a 97
+#define D 68
+#define d 100
+class Square// define el estado y comportamiento del square
+{
+	int x, y, c;//definir coordenadas y el square
+	public: // permitir que una parte del estado sea accedido directamente a través del operador
+		Square():x(15), y(15), c(254){};//definir las coordenadas iniciales y el caracter que se va a imprimir
+		void squaree()//funcion para imprimir el square 
+		{
+			gotoxy(x,y);//identificar coordenadas
+			printf ("%c", c);//imprimir el square
+		}
+		void notsquare()//funcion para quitar el square
+		{
+			gotoxy(x,y);
+			printf (" ");//imprimir un espacion en vez del square 
+		}
+		void movingsquare()//funcion para declarar los movimientos
+		{
+			while(1)//kbhit detecta como 1 si se oprime una tecla y 0 si no se oprime ninguna por lo tanto 1=tecla
+			{
+				if (kbhit())//definir si se esta oprimiento una "" tecla...
+				{
+					notsquare();
+					char direccion=getch();//capturar la tecla con getch
+					switch (direccion)//dependiendo de la tecla oprimida realizar...
+					{
+					case W://si se oprime la w..
+						y--;//sube
+					break;
+					case w://si se oprime la w..
+						y--;//sube
+					break;
+					case S://si se oprime la s..
+						y++;//baja
+					break;
+					case s://si se oprime la s..
+						y++;//baja
+					break;
+					case A://si se oprime la a..
+						x--;//va a la izquierda
+					break;
+					case a://si se oprime la a..
+						x--;//va a la izquierda
+					break;
+					case D://si se oprime la d..
+						x++;//va a la derecha
+					break;
+					case d://si se oprime la d..
+						x++;//va a la derecha
+					break;
+					}
+					squaree();
+				}
+			}
+		}
+};
+main()
+{	
+	Square sq;
+	sq.squaree();
+	sq.movingsquare();
+}
