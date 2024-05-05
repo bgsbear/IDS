@@ -1,6 +1,7 @@
 //Laura Liliana Esquibel Prudencio
 #include <gotoxy.h>
 #include <conio.h>
+
 #define W 87
 #define w 119
 #define S 83
@@ -9,6 +10,7 @@
 #define a 97
 #define D 68
 #define d 100
+
 class Square// define el estado y comportamiento del square
 {
 	int x, y, c;//definir coordenadas y el square
@@ -64,6 +66,7 @@ class Square// define el estado y comportamiento del square
 			}
 		}
 };
+
 main()
 {	
 	Square sq;
